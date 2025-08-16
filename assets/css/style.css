@@ -6,6 +6,7 @@
 
 html {
     font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* 
@@ -28,6 +29,40 @@ Quy tắc làm:
 
 .text-white {
     color: #fff !important;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
 }
 
 #main {
@@ -104,6 +139,14 @@ Quy tắc làm:
     font-size: 14px;
 }
 
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
@@ -114,6 +157,15 @@ Quy tắc làm:
     cursor: pointer;
 }
 
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
@@ -152,9 +204,12 @@ Quy tắc làm:
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 #content .section-heading {
@@ -184,6 +239,7 @@ Quy tắc làm:
     float: left;
     width: calc(100% / 3);
     text-align: center;
+    padding-bottom: 32px;
 }
 
 #content .member-name {
@@ -203,7 +259,6 @@ Quy tắc làm:
 .tickets-list {
     background-color: #fff;
     margin-top: 40px;
-    margin-bottom: 32px;
 }
 
 .tickets-list li {
@@ -235,13 +290,12 @@ Quy tắc làm:
 }
 
 .place-list {
-    margin: 0 -8px 32px;
+    margin-top: 16px;
+    margin-bottom: 48px;
 }
 
 .place-item {
-    float: left;
     width: calc(100% / 3);
-    border: 8px solid black;   /* viền bao quanh */
 }
 
 .place-img {
@@ -279,15 +333,87 @@ Quy tắc làm:
     background-color: #000;
     padding: 8px 16px;
     display: inline-block;
+    font-size: 15px;
 }
 
 .place-buy-btn:hover {
     color: #000;
     background-color: #ccc;
+    font-size: 15px;
+}
+
+.contact-content {
+    padding-top: 48px;
+}
+
+.infomation {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.infomation i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-form .form-submit {
+    font-size: 15px;
+    color: #fff;
+    background-color: #000;
+    padding: 8px 16px;
+    float: right;
+    border: none;
+}
+
+.form-submit:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* Map section */
+.map-section img{
+    width: 100%;
 }
 
 #footer {
+    padding: 64px 16px;
+    text-align: center;
+}
 
+#footer .social-list {
+    font-size: 24px;   
+}
+
+#footer .social-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    margin: 0px 4px;
+}
+
+#footer .social-list a:hover {
+    opacity: 0.6;
+}
+
+#footer .copyright {
+    font-size: 20px;
+    padding: 15px 0;
+    opacity: 0.6;
+}
+
+#footer .copyright a{
+    font-size: 20px;
+    color: #000;
 }
 
 .modal {
@@ -312,6 +438,7 @@ Quy tắc làm:
     max-width: calc(100% - 32px);
     min-height: 200px;
     position: relative;
+    animation: modalFadeIn ease 0.5s;
 }
 
 .modal-header {
@@ -379,4 +506,16 @@ Quy tắc làm:
 
 .modal-body {
     padding: 0 16px;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
